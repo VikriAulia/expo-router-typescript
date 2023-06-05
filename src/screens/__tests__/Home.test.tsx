@@ -31,5 +31,8 @@ describe('src/screens/Home', () => {
 
     expect(text.type).toBe('Text')
     expect(text.props.testID).toBe('home-screen-text')
+
+    expect(text.type).toBe('Text')
+    expect(text.props.testID).toBe('link-to-main-text')
   })
 })

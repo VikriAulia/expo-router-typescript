@@ -1,6 +1,6 @@
 import 'expo-dev-client'
 import { ThemeProvider as NavProvider } from '@react-navigation/native'
-import { Stack } from 'expo-router'
+import { Stack, Slot } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 import styled, { ThemeProvider } from 'styled-components/native'
 import { appTheme, navTheme } from 'src/assets/styles/theme'
@@ -18,6 +18,7 @@ export default function RootLayout() {
       <S.AppWrapper>
         <NavProvider value={navTheme}>
           <Stack />
+          
         </NavProvider>
       </S.AppWrapper>
     </ThemeProvider>
