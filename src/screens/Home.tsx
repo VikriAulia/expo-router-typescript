@@ -1,11 +1,16 @@
 import styled from 'styled-components/native'
-import { Stack, Link } from 'expo-router'
+import { View, Button } from 'react-native'
+import { Stack, Link, useRouter } from 'expo-router'
 import LinkButton from 'src/components/LinkButton'
 import {Text} from 'react-native-animatable'
 
+
 export default function HomeScreen() {
+  
+  const router = useRouter();
+
   const handlePressHome = () => {
-    
+    router.push("/main")
   };
 
   const handlePressAbout = () => {
@@ -18,12 +23,17 @@ export default function HomeScreen() {
   return (
     <S.Wrapper testID="home-screen">
       <Stack.Screen options={{ title: 'Home Screen', headerShown: false }} />
-
-      <S.Title testID="home-screen-title">🏠 Home Screen 🏠</S.Title>
+      <S.Title testID="home-screen-title">🏠 Halaman Utama 🏠</S.Title>
+      <Link href="/login">Present modal login</Link>
       <S.Text testID="home-screen-text">Go lah to src/screens/Home.tsx to edit halaman ini</S.Text>
       <S.Text testID="link-to-main-text">Main<Link href={"/main"}>Go To Main Screen</Link></S.Text>
 
       <LinkButton href="/second" text="Go To Second Screen" />
+      <Button
+        title="Login"
+        onPress={() => router.push("/login")}
+      />
+      
     </S.Wrapper>
   )
 }

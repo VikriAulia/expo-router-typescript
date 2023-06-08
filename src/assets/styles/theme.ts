@@ -2,8 +2,8 @@ import type { DefaultTheme } from 'styled-components'
 import { dimensions, height, width } from 'src/assets/styles/dimensions'
 
 export const appTheme: DefaultTheme = {
-  background: '#222',
-  primary: '#FFF',
+  background: 'white',
+  primary: 'black',
   secondary: '#CCC',
   highlight: '#FF2353',
   dimensions,

@@ -6,6 +6,8 @@ import styled, { ThemeProvider } from 'styled-components/native'
 import { appTheme, navTheme } from 'src/assets/styles/theme'
 import Spinner from 'src/components/Spinner'
 import useAppLoading from 'src/hooks/useAppLoading'
+import Footer from 'src/components/Footer'
+import { Provider } from 'src/context/auth'
 
 export default function RootLayout() {
   const appLoaded = useAppLoading()
@@ -17,8 +19,10 @@ export default function RootLayout() {
       <StatusBar style="light" />
       <S.AppWrapper>
         <NavProvider value={navTheme}>
-          <Stack />
-          
+          <Provider>
+          <Stack/>
+          <Footer />
+          </Provider>
         </NavProvider>
       </S.AppWrapper>
     </ThemeProvider>
